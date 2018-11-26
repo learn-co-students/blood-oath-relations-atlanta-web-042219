@@ -78,8 +78,8 @@ Questions you should ask yourself:
   * takes in an argument of a `Cult` instance and adds this follower to the cult's list of followers
 * `Follower.all`
   * returns an `Array` of all the followers
-* `Follower.of_age`
-  * takes a `Fixnum` argument that is an age and returns an `Array` of followers who are older than the given age
+* `Follower.of_a_certain_age`
+  * takes a `Fixnum` argument that is an age and returns an `Array` of followers who are the given age or older
 
 **`BloodOath`**
 
