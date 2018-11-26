@@ -1,4 +1,5 @@
 require_relative '../config/environment.rb'
+require 'time'
 
 def reload
   load 'config/environment.rb'
@@ -17,11 +18,12 @@ q = Follower.new("Chris", 26, "Yolo")
 w = Follower.new("Dick", 36, "I need a sign!")
 e = Follower.new("Mike", 18, "I'm impressionable!")
 
-BloodOath.new(q,a)
+z = BloodOath.new(q,a)
 w.join_cult(b)
 c.recruit_follower(w)
 a.recruit_follower(e)
 
+z.initiation_date = ("2017-10-22")
 
 
 binding.pry
