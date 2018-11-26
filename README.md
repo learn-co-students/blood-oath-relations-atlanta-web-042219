@@ -47,7 +47,7 @@ Questions you should ask yourself:
   * returns a `String` that is the cult's name
 * `Cult#location`
   * returns a `String` that is the city where the cult is located
-* `Cult#founding_date`
+* `Cult#founding_year`
   * returns a `Fixnum` that is the year the cult was founded
 * `Cult#slogan`
   * returns a `String` that is this cult's slogan
