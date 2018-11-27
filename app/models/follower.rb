@@ -61,4 +61,10 @@ class Follower
     end
   end
 
+  def fellow_cult_members
+    Follower.all.select do |follower|
+      binding.pry
+    end
+  end
+
 end
