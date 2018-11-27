@@ -52,7 +52,11 @@ class Follower
   end
 
   def join_cult(cult)
-    BloodOath.new(self, cult)
+    if self.age >= cult.minimum_age
+      BloodOath.new(self, cult)
+    else
+      puts "Sorry, you are not yet old enough to join the cult of #{cult.name}"
+    end
   end
 
   def my_cults_slogans
@@ -63,7 +67,7 @@ class Follower
 
   def fellow_cult_members
     Follower.all.select do |follower|
-      binding.pry
+      follower.cults & self.cults != [] && follower != self
     end
   end
 

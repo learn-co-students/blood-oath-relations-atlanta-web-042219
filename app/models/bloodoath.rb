@@ -22,7 +22,7 @@ class BloodOath
     oath_sort = self.all.sort_by do |oath|
       Time.parse(oath.initiation_date)
     end
-    oath_sort[0]
+    oath_sort[0].follower
   end
 
 
