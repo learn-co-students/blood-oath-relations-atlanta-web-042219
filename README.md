@@ -57,7 +57,7 @@ Questions you should ask yourself:
   * returns a `String` that is the cult's name
 * `Cult#location`
   * returns a `String` that is the city where the cult is located
-* `Cult#founding_date`
+* `Cult#founding_year`
   * returns a `Fixnum` that is the year the cult was founded
 * `Cult#slogan`
   * returns a `String` that is this cult's slogan
@@ -88,8 +88,8 @@ Questions you should ask yourself:
   * takes in an argument of a `Cult` instance and adds this follower to the cult's list of followers
 * `Follower.all`
   * returns an `Array` of all the followers
-* `Follower.of_age`
-  * takes a `Fixnum` argument that is an age and returns an `Array` of followers who are older than the given age
+* `Follower.of_a_certain_age`
+  * takes a `Fixnum` argument that is an age and returns an `Array` of followers who are the given age or older
 
 **`BloodOath`**
 
