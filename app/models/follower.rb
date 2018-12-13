@@ -15,7 +15,7 @@ class Follower
     @@all
   end
 
-  def self.of_age(age)
+  def self.of_a_certain_age(age)
     self.all.select do |follower|
       follower.age > age
     end
