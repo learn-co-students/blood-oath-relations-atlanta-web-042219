@@ -1,3 +1,9 @@
+### THINGS TO REMEMBER
+- Know the difference between Select & Map
+- Read the entire README first
+- Draw out your relationships
+- Think about all the attributes of a model
+
 Blood Oath Lab
 ==============
 
