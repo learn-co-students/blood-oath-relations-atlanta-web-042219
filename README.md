@@ -85,7 +85,7 @@ Questions you should ask yourself:
 * `Follower#cults`
   * returns an `Array` of this follower's cults
 * `Follower#join_cult`
-  * takes in an argument of a `Cult` instance and adds this follower to the cult's list of followers
+  * takes in an argument of a `Cult` instance and an initiation_date, and adds this follower to the cult's list of followers
 * `Follower.all`
   * returns an `Array` of all the followers
 * `Follower.of_a_certain_age`
