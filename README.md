@@ -1,9 +1,3 @@
-### THINGS TO REMEMBER
-- Know the difference between Select & Map
-- Read the entire README first
-- Draw out your relationships
-- Think about all the attributes of a model
-
 Blood Oath Lab
 ==============
 
@@ -57,7 +51,7 @@ Questions you should ask yourself:
 * Should I write any other methods?
 * Am I following _Single Source of Truth_?
 
-<!-- **`Cult`**
+**`Cult`**
 
 * `Cult#name`
   * returns a `String` that is the cult's name
@@ -68,7 +62,7 @@ Questions you should ask yourself:
 * `Cult#slogan`
   * returns a `String` that is this cult's slogan
 * `Cult#recruit_follower`
-  * takes in an argument of a `Follower` instance and adds them to this cult's list of followers
+  * takes in an argument of a `Follower` instance and an initiation year, and adds them to this cult's list of followers
 * `Cult#cult_population`
   * returns a `Fixnum` that is the number of followers in this cult
 * `Cult.all`
@@ -78,11 +72,11 @@ Questions you should ask yourself:
 * `Cult.find_by_location`
   * takes a `String` argument that is a location and returns an `Array` of cults that are in that location
 * `Cult.find_by_founding_year`
-  * takes a `Fixnum` argument that is a year and returns all of the cults founded in that year -->
+  * takes a `Fixnum` argument that is a year and returns all of the cults founded in that year
 
 **`Follower`**
 
-<!-- * `Follower#name`
+* `Follower#name`
   * returns a `String` that is the follower's name
 * `Follower#age`
   * returns a `Fixnum` that is the age of the follower
@@ -95,14 +89,14 @@ Questions you should ask yourself:
 * `Follower.all`
   * returns an `Array` of all the followers
 * `Follower.of_a_certain_age`
-  * takes a `Fixnum` argument that is an age and returns an `Array` of followers who are the given age or older -->
+  * takes a `Fixnum` argument that is an age and returns an `Array` of followers who are the given age or older
 
 **`BloodOath`**
 
-<!-- * `BloodOath#initiation_date`
-  * returns a `String` that is the initiation date of this blood oath in the format _YYYY-MM-DD_.
+* `BloodOath#initiation_date`
+  * returns a `String` that is the initiation date of this blood oath in the format _MM-DD-YYYY_.
 * `BloodOath.all`
-  * returns an `Array` of all the blood oaths -->
+  * returns an `Array` of all the blood oaths
 
 ---
 
