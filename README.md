@@ -53,20 +53,20 @@ Questions you should ask yourself:
 
 **`Cult`**
 
-* `Cult#name`
-  * returns a `String` that is the cult's name
-* `Cult#location`
-  * returns a `String` that is the city where the cult is located
-* `Cult#founding_year`
-  * returns a `Fixnum` that is the year the cult was founded
-* `Cult#slogan`
-  * returns a `String` that is this cult's slogan
-* `Cult#recruit_follower`
-  * takes in an argument of a `Follower` instance and an initiation year, and adds them to this cult's list of followers
+<!-- * `Cult#name`
+  * returns a `String` that is the cult's name -->
+<!-- * `Cult#location`
+  * returns a `String` that is the city where the cult is located -->
+<!-- * `Cult#founding_year`
+  * returns a `Fixnum` that is the year the cult was founded -->
+<!-- * `Cult#slogan`
+  * returns a `String` that is this cult's slogan -->
+<!-- * `Cult#recruit_follower`
+  * takes in an argument of a `Follower` instance, and adds them to this cult's list of followers -->
 * `Cult#cult_population`
   * returns a `Fixnum` that is the number of followers in this cult
-* `Cult.all`
-  * returns an `Array` of all the cults
+<!-- * `Cult.all`
+  * returns an `Array` of all the cults -->
 * `Cult.find_by_name`
   * takes a `String` argument that is a name and returns a `Cult` instance whose name matches that argument
 * `Cult.find_by_location`
@@ -76,27 +76,27 @@ Questions you should ask yourself:
 
 **`Follower`**
 
-* `Follower#name`
-  * returns a `String` that is the follower's name
-* `Follower#age`
-  * returns a `Fixnum` that is the age of the follower
-* `Follower#life_motto`
-  * returns a `String` that is the follower's life motto
+<!-- * `Follower#name`
+  * returns a `String` that is the follower's name -->
+<!-- * `Follower#age`
+  * returns a `Fixnum` that is the age of the follower -->
+<!-- * `Follower#life_motto`
+  * returns a `String` that is the follower's life motto -->
 * `Follower#cults`
   * returns an `Array` of this follower's cults
 * `Follower#join_cult`
   * takes in an argument of a `Cult` instance and an initiation_date, and adds this follower to the cult's list of followers
-* `Follower.all`
-  * returns an `Array` of all the followers
+<!-- * `Follower.all`
+  * returns an `Array` of all the followers -->
 * `Follower.of_a_certain_age`
   * takes a `Fixnum` argument that is an age and returns an `Array` of followers who are the given age or older
 
 **`BloodOath`**
 
-* `BloodOath#initiation_date`
-  * returns a `String` that is the initiation date of this blood oath in the format _MM-DD-YYYY_.
-* `BloodOath.all`
-  * returns an `Array` of all the blood oaths
+<!-- * `BloodOath#initiation_date`
+  * returns a `String` that is the initiation date of this blood oath in the format _MM-DD-YYYY_. -->
+<!-- * `BloodOath.all`
+  * returns an `Array` of all the blood oaths -->
 
 ---
 
