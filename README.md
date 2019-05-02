@@ -63,6 +63,10 @@ Questions you should ask yourself:
   * returns a `String` that is this cult's slogan -->
 <!-- * `Cult#recruit_follower`
   * takes in an argument of a `Follower` instance, and adds them to this cult's list of followers -->
+* `Cult#bloodoaths`
+  * returns all the Bloodoaths that were made with this cult
+* `Cult#followers`
+  * returns all the followers that are in the cult
 * `Cult#cult_population`
   * returns a `Fixnum` that is the number of followers in this cult
 <!-- * `Cult.all`

@@ -24,10 +24,12 @@ attr_accessor :name, :location, :follower, :bloodoath, :founding_year, :slogan
    BloodOath.new(self,follower)
  end
 
+#Extra method we did in class
  def bloodoaths
    BloodOath.all.select { |oath| oath.cult == self }
  end
 
+#Extra method we did in class
  def followers
    self.bloodoaths.map { |oath| oath.follower }
  end
