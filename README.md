@@ -36,9 +36,17 @@ There are **no** tests! You will need to test your code on your own!!
 First step is to model the domain you are building out. As a non-discriminatory cult recruitment platform, `Cult`s will have many `Follower`s while `Follower`s will be allowed to join many `Cult`s. How do they keep track of this? `BloodOath`s of course! You cannot join a `Cult` without making a `BloodOath`.
 
 * What are your models?
-* What does your schema look like?
+  - Cult
+  - Follower
+  - BloodOath
 * What are the relationships between your models?
-
+  - Cults and Followers is a many-to-many, Blood Oaths are in the middle
+  - Cult has many Followers
+  - Follower has many Cults
+  - Blood Oath belongs to a Cult
+  - Blood Oath belongs to a Follower
+* What does your schema look like?
+  * Blood Oath probably needs: @@oaths, @cult, @follower
 ---
 
 ### Basic Class Attributes and Methods
@@ -53,50 +61,24 @@ Questions you should ask yourself:
 
 **`Cult`**
 
-* `Cult#name`
-  * returns a `String` that is the cult's name
-* `Cult#location`
-  * returns a `String` that is the city where the cult is located
-* `Cult#founding_year`
-  * returns a `Fixnum` that is the year the cult was founded
-* `Cult#slogan`
-  * returns a `String` that is this cult's slogan
-* `Cult#recruit_follower`
-  * takes in an argument of a `Follower` instance and adds them to this cult's list of followers
-* `Cult#cult_population`
-  * returns a `Fixnum` that is the number of followers in this cult
-* `Cult.all`
-  * returns an `Array` of all the cults
 * `Cult.find_by_name`
+  * only returns 1 cult, so i should use the find enumerator
   * takes a `String` argument that is a name and returns a `Cult` instance whose name matches that argument
 * `Cult.find_by_location`
+  * returns an array, so i should use the select enumerator
   * takes a `String` argument that is a location and returns an `Array` of cults that are in that location
 * `Cult.find_by_founding_year`
+  * returns an array, so i should use the select enumerator
   * takes a `Fixnum` argument that is a year and returns all of the cults founded in that year
 
 **`Follower`**
 
-* `Follower#name`
-  * returns a `String` that is the follower's name
-* `Follower#age`
-  * returns a `Fixnum` that is the age of the follower
-* `Follower#life_motto`
-  * returns a `String` that is the follower's life motto
-* `Follower#cults`
-  * returns an `Array` of this follower's cults
-* `Follower#join_cult`
-  * takes in an argument of a `Cult` instance and adds this follower to the cult's list of followers
 * `Follower.all`
   * returns an `Array` of all the followers
 * `Follower.of_a_certain_age`
   * takes a `Fixnum` argument that is an age and returns an `Array` of followers who are the given age or older
 
 **`BloodOath`**
-
-* `BloodOath#initiation_date`
-  * returns a `String` that is the initiation date of this blood oath in the format _YYYY-MM-DD_.
-* `BloodOath.all`
-  * returns an `Array` of all the blood oaths
 
 ---
 
