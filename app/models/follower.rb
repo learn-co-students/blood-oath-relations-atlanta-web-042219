@@ -57,14 +57,16 @@ class Follower
 	end
 
 	def self.top_ten
+		empty = Follower.new("", 0, "")
 		top10 = []
-		10.times {top10 << nil}
+		10.times {top10 << empty}
 		@@all.each {|follower|
 			for k in 0..9 do
-				top10[k] ||= follower 
-				top10[k]   = follower if follower.cults.count > top10[k].cults.count && !top10.include?(follower)
+				top10[k] = follower if top10[k] == empty  && !top10.include?(follower)
+				top10[k] = follower if follower.cults.count > top10[k].cults.count && !top10.include?(follower)
 			end
 		}
+		@@all.delete(empty)
 		top10.uniq
 	end
 end

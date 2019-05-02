@@ -9,38 +9,35 @@ end
 
 flatiron = Cult.new("The Flatiron School", "New York", 2012, "Learn. Love. Code.", 21)
 marta = Cult.new("MARTA-cult", "Georgia", 2019, "Ride or Die", 28)
-tamu = Cult.new("Texas A&M University", "Texas", 1871, "Gigem, Aggies!", 400)
+tamu = Cult.new("Texas A&M University", "Texas", 1871, "Gigem, Aggies!", 18)
 uta = Cult.new("UT Austin", "Texas", 1916, "Disciplina Praesidium Civitatis", 18)
 
-
-deka = Follower.new("Deka Ambia", 32, "motto")
-andrew = Follower.new("Andrew Allen", 24, "motto")
 tun = Follower.new("Tun Khine", 38, "motto")
 tez = Follower.new("Montez Smith", 30, "motto")
+andrew = Follower.new("Andrew Allen", 24, "motto")
+deka = Follower.new("Deka Ambia", 32, "motto")
 paula = Follower.new("Paula Tulis", 0, "motto")
 
-flatiron.recruit_follower(tez)
-tez.join_cult(marta)
-
+#tun is in all 4 cults
 tun.join_cult(flatiron)
 tun.join_cult(marta)
+tun.join_cult(tamu)
 tun.join_cult(uta)
 
+#tez is in 3 cults
+tez.join_cult(flatiron)
+tez.join_cult(marta)
+tez.join_cult(uta)
+
+#andrew is in 2 cults
+BloodOath.new(tamu, andrew, "1/1/2005")
+BloodOath.new(uta, andrew, "1/1/2004")
+
+#deka is in 1 cult
+BloodOath.new(marta, deka, "1/2/2004")
+
+#paula is in 0 cults
 marta.recruit_follower(paula)
-
-andrew.join_cult(tamu)
-
-BloodOath.new(marta, deka, "1/1/2000")
-
-
-
-
-
-
-
-
-
+paula.join_cult(flatiron)
 
 binding.pry
-
-puts "Mwahahaha!" # just in case pry is buggy and exits

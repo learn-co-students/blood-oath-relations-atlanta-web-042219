@@ -6,7 +6,7 @@ class BloodOath
 		@@all
 	end
 
-	def initialize(cult, follower, initiation_date=Time.now.strftime("%d/%m/%Y"))
+	def initialize(cult, follower, initiation_date=Time.now.strftime("%m/%d/%Y"))
 		@cult = cult
 		@follower = follower
 		@initiation_date = initiation_date
@@ -14,12 +14,15 @@ class BloodOath
 	end
 
 	def self.first_oath
-		dates_hash = {}
+		dates = []
 		@@all.each {|oath|
-			dates_hash[oath.follower] = oath.initiation_date.split("/").reverse
+			temp = oath.initiation_date.split("/").reverse
+			temp[1], temp[2] = temp[2], temp[1]
+			dates << temp
 		}
-		sorted_dates = dates_hash.values.sort
-		test = self.find_by_date(sorted_dates[0].reverse.join("/"))
+		dates = dates.sort
+		dates[0][1], dates[0][2] = dates[0][2], dates[0][1]
+		self.find_by_date(dates[0].reverse.join("/"))
 	end
 
 	def self.find_by_date(date)
