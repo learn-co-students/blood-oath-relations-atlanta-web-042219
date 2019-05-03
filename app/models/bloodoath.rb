@@ -1,16 +1,20 @@
 class BloodOath
-	attr_accessor :cult, :follower, :initiation_date
+	attr_accessor :follower, :cult, :initiation_date
 	@@all = []
 
 	def self.all
 		@@all
 	end
 
-	def initialize(cult, follower, initiation_date=Time.now.strftime("%m/%d/%Y"))
-		@cult = cult
-		@follower = follower
-		@initiation_date = initiation_date
-		@@all << self
+	def initialize(follower, cult, initiation_date=Time.now.strftime("%m/%d/%Y"))
+		if follower.passes_age_req?(cult.minimum_age)
+			@follower = follower
+			@cult = cult
+			@initiation_date = initiation_date
+			@@all << self
+		else
+			puts "You're too young to join this cult, #{follower.name}. Get out lol."
+		end
 	end
 
 	def self.first_oath

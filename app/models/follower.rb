@@ -14,11 +14,11 @@ class Follower
 	end
 
 	def join_cult(cult)
-		if @age > cult.minimum_age
-			BloodOath.new(cult, self)
-		else
-			puts "You're too young, #{@name}. Get out lol."
-		end
+		BloodOath.new(self, cult)
+	end
+
+	def passes_age_req?(age_req)
+		@age >= age_req
 	end
 
 	def bloodoaths
@@ -26,7 +26,7 @@ class Follower
 	end
 
 	def cults
-		self.bloodoaths.map {|oath| oath.cult}
+		self.bloodoaths.map(&:cult)
 	end
 
 	def my_cults_slogans
@@ -48,26 +48,10 @@ class Follower
 	end
 
 	def self.most_active
-		max = nil
-		@@all.each {|follower|
-			max ||= follower
-			max   = follower if follower.cults.count > max.cults.count
-		}
-		max
+		self.all.max_by {|follower| follower.cults.count}
 	end
 
 	def self.top_ten
-		return "There are no followers yet." if @@all.count == 0
-		empty = Follower.new(nil, nil, nil)
-		top10 = []
-		10.times {top10 << empty}
-		@@all.each {|follower|
-			for k in 0..9 do
-				top10[k] = follower if !top10.include?(follower) && (top10[k] == empty || follower.cults.count > top10[k].cults.count)
-			end
-		}
-		top10.delete(empty)
-		@@all.delete(empty)
-		top10.uniq
+		self.all.sort_by {|follower| follower.cults.count}.reverse.first(10)
 	end
 end

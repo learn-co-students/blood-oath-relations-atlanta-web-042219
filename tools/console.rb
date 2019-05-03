@@ -19,25 +19,29 @@ deka = Follower.new("Deka Ambia", 32, "motto")
 paula = Follower.new("Paula Tulis", 0, "motto")
 
 #tun is in all 4 cults
-tun.join_cult(flatiron)
-tun.join_cult(marta)
-tun.join_cult(tamu)
-tun.join_cult(uta)
+# tun.join_cult(flatiron)
+# tun.join_cult(marta)
+# tun.join_cult(tamu)
+# tun.join_cult(uta)
 
-#tez is in 3 cults
-tez.join_cult(flatiron)
-tez.join_cult(marta)
-tez.join_cult(uta)
+# #tez is in 3 cults
+# tez.join_cult(flatiron)
+# tez.join_cult(marta)
+# tez.join_cult(uta)
 
 #andrew is in 2 cults
-BloodOath.new(tamu, andrew, "1/1/2005")
-BloodOath.new(uta, andrew, "1/1/2004")
+BloodOath.new(andrew, tamu, "1/1/2005")
+BloodOath.new(andrew, uta, "1/3/2004") #first
 
 #deka is in 1 cult
-BloodOath.new(marta, deka, "1/2/2004")
+BloodOath.new(deka, marta, "2/1/2004")
 
 #paula is in 0 cults
-marta.recruit_follower(paula)
+
+#followers who don't pass the age requirement are rejected...
+#regardless if they are recruited or try to join themselves
+marta.recruit_follower(andrew)
 paula.join_cult(flatiron)
 
 binding.pry
+0

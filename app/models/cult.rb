@@ -16,11 +16,7 @@ class Cult
 	end
 
 	def recruit_follower(follower)
-		if follower.age > @minimum_age
-			BloodOath.new(self, follower)
-		else
-			puts "You're too young, #{follower.name}. Get out lol."
-		end
+		BloodOath.new(follower, self)
 	end
 
 	def bloodoaths
@@ -28,7 +24,7 @@ class Cult
 	end
 
 	def followers
-		self.bloodoaths.map {|oath| oath.follower}
+		self.bloodoaths.map(&:follower)
 	end
 
 	def population
