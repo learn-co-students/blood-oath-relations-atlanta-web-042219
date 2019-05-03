@@ -66,6 +66,7 @@ class Follower
 				top10[k] = follower if !top10.include?(follower) && (top10[k] == empty || follower.cults.count > top10[k].cults.count)
 			end
 		}
+		top10.delete(empty)
 		@@all.delete(empty)
 		top10.uniq
 	end
