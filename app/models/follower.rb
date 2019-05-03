@@ -50,20 +50,20 @@ class Follower
 	def self.most_active
 		max = nil
 		@@all.each {|follower|
-			max = follower if max == nil
-			max = follower if follower.cults.count > max.cults.count
+			max ||= follower
+			max   = follower if follower.cults.count > max.cults.count
 		}
 		max
 	end
 
 	def self.top_ten
-		empty = Follower.new("", 0, "")
+		return "There are no followers yet." if @@all.count == 0
+		empty = Follower.new(nil, nil, nil)
 		top10 = []
 		10.times {top10 << empty}
 		@@all.each {|follower|
 			for k in 0..9 do
-				top10[k] = follower if top10[k] == empty  && !top10.include?(follower)
-				top10[k] = follower if follower.cults.count > top10[k].cults.count && !top10.include?(follower)
+				top10[k] = follower if !top10.include?(follower) && (top10[k] == empty || follower.cults.count > top10[k].cults.count)
 			end
 		}
 		@@all.delete(empty)
