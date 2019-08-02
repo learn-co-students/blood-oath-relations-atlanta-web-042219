@@ -25,8 +25,6 @@ Through this file, we've provided to you a console that you can use to test your
 
 Your goal is to build out all of the methods listed in the deliverables. Do your best to follow Ruby best practices. For example, use higher-level array methods such as `map`, `select`, and `find` when appropriate in place of `each`.
 
-There are **no** tests! You will need to test your code on your own!!
-
 ---
 
 ## Deliverables
